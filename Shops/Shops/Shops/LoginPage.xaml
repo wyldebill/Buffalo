@@ -4,9 +4,51 @@
              x:Class="Shops.LoginPage"
              Title="LoginPage">
     <StackLayout
+      Orientation="Horizontal"
       Padding="10,200,10,0"
       BackgroundColor="Blue"
       VerticalOptions="FillAndExpand"
       Spacing="20">
     </StackLayout>
+
+    <ListView
+        x:Name="shoplistview" BackgroundColor="White">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition> 
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+
+
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition> 
+
+                                <ColumnDefinition Width="Auto"></ColumnDefinition> 
+
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="icon.png" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" HeightRequest="50" WidthRequest="50"></Image>
+
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Name}" TextColor="Black" FontAttributes="Bold" FontSize="15"></Label>
+                            <Label Grid.Row="2" Grid.Column="1" Text="{Binding Address}" TextColor="Black" FontAttributes="Bold" FontSize="12"></Label>
+
+                            <Label Grid.Row="3" Grid.Column="1" Text="{Binding Distance}" TextColor="Black" FontAttributes="Bold" FontSize="12"></Label>
+
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+        
+        
+    </ListView>
 </ContentPage>

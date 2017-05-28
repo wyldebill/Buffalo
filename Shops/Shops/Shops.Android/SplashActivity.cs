@@ -13,6 +13,9 @@ using Android.Support.V7.App;
 
 namespace Shops.Droid
 {
+    /*
+     * https://xamarinhelp.com/creating-splash-screen-xamarin-forms/
+     * */
 
     [Activity(Label = "SplashActivity", Icon = "@drawable/icon", Theme = "@style/splashscreen", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : AppCompatActivity
