@@ -5,7 +5,7 @@
              Title="StoreTypeSelectionPage">
     <StackLayout Padding="10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
 
-        <ListView x:Name="storeTypeSelectionList" HasUnevenRows="True" SeparatorVisibility="Default" >
+        <ListView x:Name="storeTypeSelectionList" HasUnevenRows="True" SeparatorVisibility="Default" ItemSelected="StoreTypeSelected" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>

@@ -33,7 +33,23 @@ namespace Shops
             };
             storeTypeSelectionList.ItemsSource = storeSelection;
 
+            // disable the 'highlight/selection' of rows. selecting a row will immediately choose it and move on to the next page
+            storeTypeSelectionList.ItemSelected += (sender, e) => {
+                ((ListView)sender).SelectedItem = null;
+            };
+
+
             //BindingContext = new StoreTypeSelectionPageViewModel();
+        }
+
+        public void StoreTypeSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+            {
+                return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
+            }
+            DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
+            //((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
         }
     }
 
