@@ -13,7 +13,7 @@ namespace Shops
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Shops.LoginPage());
+            MainPage = new NavigationPage(new Shops.StoreTypeSelectionPage());
         }
 
         protected override void OnStart()

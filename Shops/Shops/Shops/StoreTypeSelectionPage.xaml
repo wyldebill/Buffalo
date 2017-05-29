@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Shops.StoreTypeSelectionPage"
+             Title="StoreTypeSelectionPage">
+    <StackLayout Padding="10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+        <ListView x:Name="storeTypeSelectionList" HasUnevenRows="True" SeparatorVisibility="Default" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Grid Padding="30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                    
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding StoreTypeImage}" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" HeightRequest="50" WidthRequest="50"></Image>
+
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold" FontSize="20"></Label>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="13"></Label>
+
+                               
+                             
+
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
