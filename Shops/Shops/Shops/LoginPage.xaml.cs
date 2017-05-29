@@ -26,51 +26,27 @@ namespace Shops
             stores = new ObservableCollection<Store>
             {
                 new Store{ Id=1,     Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
-                new Store{ Id=2 ,   Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
-                new Store{ Id=3,     Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
-                new Store{ Id=4,    Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
-                new Store{ Id=5,    Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
-                new Store{ Id=6 ,   Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
-                new Store{ Id=7,     Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"}
-
-
-
-
-
-
+                new Store{ Id=2 ,   Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"}
+                //new Store{ Id=3,     Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
+                //new Store{ Id=4,    Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
+                //new Store{ Id=5,    Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
+                //new Store{ Id=6 ,   Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
+                //new Store{ Id=7,     Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"}
             };
             shoplistview.ItemsSource = stores;
-            BindingContext = new LoginPageViewModel();
+            //BindingContext = new LoginPageViewModel();
 
         }
-    }
 
-    class LoginPageViewModel : INotifyPropertyChanged
-    {
-
-        public LoginPageViewModel()
+        public ObservableCollection<Store> Stores
         {
-            IncreaseCountCommand = new Command(IncreaseCount);
+            get { return stores; }
+            private set {; }
         }
 
-        int count;
-
-        string countDisplay = "You clicked 0 times.";
-        public string CountDisplay
-        {
-            get { return countDisplay; }
-            set { countDisplay = value; OnPropertyChanged(); }
-        }
-
-        public ICommand IncreaseCountCommand { get; }
-
-        void IncreaseCount() =>
-            CountDisplay = $"You clicked {++count} times";
 
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged([CallerMemberName]string propertyName = "") =>
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
 
     }
 }
