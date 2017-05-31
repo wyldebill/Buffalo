@@ -13,6 +13,8 @@ using Xamarin.Forms.Xaml;
 
 namespace Shops
 {
+    // TODO: remove this page, it isn't used
+
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {

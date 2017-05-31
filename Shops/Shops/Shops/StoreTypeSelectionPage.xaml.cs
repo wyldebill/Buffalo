@@ -48,8 +48,10 @@ namespace Shops
             {
                 return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
             }
+
+            Navigation.PushAsync(new StoreMapPage());
             DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
-            //((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
+            ((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
         }
     }
 
