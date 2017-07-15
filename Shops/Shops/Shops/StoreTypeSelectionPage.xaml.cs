@@ -50,7 +50,7 @@ namespace Shops
             }
 
             Navigation.PushAsync(new StoreMapPage());
-            DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
+            //DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
             ((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
         }
     }

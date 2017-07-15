@@ -30,8 +30,9 @@
       Grid.ColumnSpan="2"
       Grid.Row="1"
       x:Name="MyMap"
+      
       IsShowingUser="true"
-      MapType="Hybrid"/>
+      MapType="Street"/>
     <Slider x:Name="SliderZoom" 
             Grid.Row="2"
             Grid.ColumnSpan="2"
