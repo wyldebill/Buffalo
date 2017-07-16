@@ -26,6 +26,28 @@ namespace Shops
             // for now, intialize the location to Buffalo, arbitrary point
             MyMap.MoveToRegion(new MapSpan(new Position(45.172386, -93.874920), .001, .001));
 
+
+            // now let's add a pin, just default pin without custom ui goodness.  yes, it's ugly
+            ShopMapData site = new ShopMapData()
+            {
+                Address = "105 Divison St. Buffalo MN 55313",
+                Name = "Biggs & Company",
+                Website = "www.biggsandcompany.com",
+                Latitude = 45.172182,
+                Longitude = -93.874363
+            };
+
+            Pin pin = new Pin
+            {
+                BindingContext = site,
+                Label = site.Name,
+                Position = new Position(site.Latitude, site.Longitude),
+                Address = site.Address
+            };
+
+            //pin.Clicked += OnPinClicked;
+            MyMap.Pins.Add(pin);
+
         }
 
         
