@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Shops.StoreMapPage"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             Title="MapPage">
+             Title="Store Map Page">
   <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="*"/>
@@ -15,7 +15,7 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <Entry 
+    <!--<Entry 
       Text="Seattle,WA"
       Placeholder="Enter location"
       x:Name="EntryLocation"
@@ -25,7 +25,7 @@
       Text="Go To" 
       x:Name="ButtonGoTo" 
       Clicked="OnGoToClicked"
-      Margin="10"/>
+      Margin="10"/>-->
     <maps:Map 
       Grid.ColumnSpan="2"
       Grid.Row="1"
