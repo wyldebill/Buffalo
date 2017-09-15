@@ -32,7 +32,8 @@
       x:Name="MyMap"
       
       IsShowingUser="False"
-      MapType="Street"/>
+      MapType="Street"/>       
+      <!--IsShowingUser requires different permissions now and what a headache to figure it out.  going to use montemagno's permission plugin-->
     <Slider x:Name="SliderZoom" 
             Grid.Row="2"
             Grid.ColumnSpan="2"
