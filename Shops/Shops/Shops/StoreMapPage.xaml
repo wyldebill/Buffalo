@@ -31,7 +31,7 @@
       Grid.Row="1"
       x:Name="MyMap"
       
-      IsShowingUser="true"
+      IsShowingUser="False"
       MapType="Street"/>
     <Slider x:Name="SliderZoom" 
             Grid.Row="2"
