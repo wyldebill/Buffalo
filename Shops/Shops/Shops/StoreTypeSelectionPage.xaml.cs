@@ -24,8 +24,8 @@ namespace Shops
             storeSelection = new List<StoreSelectionItem>
             {
                 new StoreSelectionItem{ Id=1,     Name ="EveryDay", Description="These stores typically...", StoreTypeImage="icon.png"},
-                new StoreSelectionItem{ Id=1,     Name ="Weekends", Description="These stores typically are open Weekends only...", StoreTypeImage="icon.png"},
-                new StoreSelectionItem{ Id=1,     Name ="Occasional", Description="These stores are open the same time each month...", StoreTypeImage="icon.png"}
+                new StoreSelectionItem{ Id=2,     Name ="Weekends", Description="These stores typically are open Weekends only...", StoreTypeImage="icon.png"},
+                new StoreSelectionItem{ Id=3,     Name ="Occasional", Description="These stores are open the same time each month...", StoreTypeImage="icon.png"}
                 //new Store{ Id=4,    Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
                 //new Store{ Id=5,    Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
                 //new Store{ Id=6 ,   Name ="Biggs and Company", Address="111 Division St. Buffalo MN", Distance="4mi", StoreImage="icon.png"},
@@ -42,14 +42,14 @@ namespace Shops
             //BindingContext = new StoreTypeSelectionPageViewModel();
         }
 
-        public void StoreTypeSelected(object sender, SelectedItemChangedEventArgs e)
+        public async Task StoreTypeSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
             {
                 return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
             }
 
-            Navigation.PushAsync(new StoreMapPage());
+            await Navigation.PushAsync(new StoreMapPage());
             //DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
             ((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
         }
