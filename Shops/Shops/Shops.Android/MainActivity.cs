@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Xamarin;
 using Plugin.Permissions;
+using HockeyApp.Android;
 
 namespace Shops.Droid
 {
@@ -18,6 +19,11 @@ namespace Shops.Droid
 		//https://github.com/jamesmontemagno/MarshmallowSamples/blob/master/RuntimePermissions/MarshmallowPermission/MainActivity.cs
 		//https://blog.xamarin.com/requesting-runtime-permissions-in-android-marshmallow/
 
+		protected override void OnResume()
+		{
+			base.OnResume();
+			CrashManager.Register(this, "85ba420d3a4d412b953a94f1d385ac91");
+		}
 
 		protected override void OnCreate(Bundle bundle)
         {
