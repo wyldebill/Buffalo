@@ -39,7 +39,7 @@ namespace Shops
             };
 
 
-            //BindingContext = new StoreTypeSelectionPageViewModel();
+        
         }
 
         public async Task StoreTypeSelected(object sender, SelectedItemChangedEventArgs e)
@@ -50,8 +50,8 @@ namespace Shops
             }
 
             await Navigation.PushAsync(new StoreMapPage());
-            //DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
-            ((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
+          
+            ((ListView)sender).SelectedItem = null; 
         }
 
         private async void storeTypeSelectionList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -62,8 +62,7 @@ namespace Shops
             }
 
             await Navigation.PushAsync(new StoreMapPage());
-            //DisplayAlert("Item Selected", e.SelectedItem.ToString(), "Ok");
-            ((ListView)sender).SelectedItem = null; //uncomment line if you want to disable the visual selection state.
+            ((ListView)sender).SelectedItem = null;
         }
     }
 

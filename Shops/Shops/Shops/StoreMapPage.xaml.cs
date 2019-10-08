@@ -85,7 +85,7 @@ namespace Shops
             catch (Exception ex)
             {
 
-                int z =100;
+                throw;
             }
         }
 
@@ -106,7 +106,7 @@ namespace Shops
                 Position = point,
                 Type = PinType.Generic
             });
-            //  MyMap.MoveToRegion(new MapSpan(new Position(37.8044866, -122.4324132), 360, 360));
+            
         }
 
         private void OnStreetClicked(object sender, EventArgs e) =>
