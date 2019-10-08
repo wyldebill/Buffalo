@@ -25,15 +25,16 @@ namespace Shops.Droid
 			CrashManager.Register(this, "85ba420d3a4d412b953a94f1d385ac91");
 		}
 
-		protected override void OnCreate(Bundle bundle)
+        
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-            FormsMaps.Init(this, bundle);
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
 

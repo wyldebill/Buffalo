@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shops.Android", "Shops\Shops.Android\Shops.Android.csproj", "{4D7C86CC-11C4-4369-9125-B1BFFC9DF32C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shops", "Shops\Shops\Shops.csproj", "{197BAF3D-3326-44C5-B2BA-26848FEDF163}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shops", "Shops\Shops\Shops.csproj", "{197BAF3D-3326-44C5-B2BA-26848FEDF163}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shops.iOS", "Shops\Shops.iOS\Shops.iOS.csproj", "{53CB472F-92BC-4883-9C91-BD05FFA88101}"
 EndProject
@@ -108,5 +108,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04E35936-8651-48E7-B656-49B1DD9580FA}
 	EndGlobalSection
 EndGlobal
