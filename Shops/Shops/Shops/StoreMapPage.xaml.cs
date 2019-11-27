@@ -63,7 +63,8 @@ namespace Shops
                 {
                     if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Location))
                     {
-                        await DisplayAlert("Need location", "Gunna need that location", "OK");
+						// hitting the ui from a non ui thread as this was called async?  baaaad
+                        //await DisplayAlert("Need location", "Gunna need that location", "OK");
                     }
 
                     var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Location);
@@ -74,12 +75,15 @@ namespace Shops
 
                 if (status == PermissionStatus.Granted)
                 {
+	                MyMap.IsShowingUser = true;
+
+
                     var results = await CrossGeolocator.Current.GetPositionAsync(new System.TimeSpan(0,0,60));
                     string positionInfo = "Lat: " + results.Latitude + " Long: " + results.Longitude;
                 }
                 else if (status != PermissionStatus.Unknown)
                 {
-                    await DisplayAlert("Location Denied", "Can not continue, try again.", "OK");
+                    // await DisplayAlert("Location Denied", "Can not continue, try again.", "OK");
                 }
             }
             catch (Exception ex)
@@ -142,10 +146,12 @@ namespace Shops
             MyMap.MoveToRegion(new MapSpan(MyMap.VisibleRegion.Center, latlongdegrees, latlongdegrees));
         }
 
-        protected  override void OnAppearing()
+        protected override async void OnAppearing()
         {
-            //MyMap.MoveToRegion(new MapSpan(new Position(45.1718, -93.874), 180, 180));
+	        base.OnAppearing();
+	        await IsLocationAvailable();
+		}
 
-        }
-    }
+        
+	}
 }
